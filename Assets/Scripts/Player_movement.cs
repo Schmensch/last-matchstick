@@ -9,11 +9,10 @@ public class Player_movement : MonoBehaviour
     public Transform CameraView;
 
     private Vector3 direction;
-    private float speed = 4f;
+    private float speed = 10f;
 
     private Rigidbody rigidBody;
-    private float jumpPower = 5f;
-    private float WalkingSpeedMultiplier = 1.5f;
+    //private float jumpPower = 5f;
     public float y;
 
     void Start()
@@ -42,22 +41,22 @@ public class Player_movement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W))
         {
-            transform.position = transform.position + (Camera.main.transform.forward * speed * Time.deltaTime) * WalkingSpeedMultiplier;
+            transform.position = transform.position + Camera.main.transform.forward * speed * Time.deltaTime;
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            transform.position = transform.position + ((Camera.main.transform.right * -1) * speed * Time.deltaTime) * WalkingSpeedMultiplier;
+            transform.position = transform.position + (Camera.main.transform.right * -1) * speed * Time.deltaTime;
         }
 
         if (Input.GetKey(KeyCode.S))
         {
-            transform.position = transform.position + ((Camera.main.transform.forward * -1) * speed * Time.deltaTime) * WalkingSpeedMultiplier;
+            transform.position = transform.position + (Camera.main.transform.forward * -1) * speed * Time.deltaTime;
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            transform.position = transform.position + (Camera.main.transform.right * speed * Time.deltaTime) * WalkingSpeedMultiplier;
+            transform.position = transform.position + (Camera.main.transform.right * speed * Time.deltaTime);
         }
     }
 }
