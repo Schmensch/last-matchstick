@@ -18,6 +18,13 @@ public class Panic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(usematchstick.framesLit);
+        if (usematchstick.framesLit < 1) {
+            PanicTimer = PanicTimer - 1;
+        }
+
+        if (PanicTimer < 0) {
+            Debug.Log("Youd died");
+            Application.Quit();
+        }
     }
 }
