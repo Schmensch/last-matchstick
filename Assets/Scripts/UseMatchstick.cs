@@ -18,7 +18,7 @@ public class UseMatchstick : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E)) {
-            framesLit = 600;
+            framesLit = 300;
         }
 
         if (framesLit > 0)
